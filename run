@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+$script = file_get_contents('./code.js');
+$start = microtime(true);
+
+$params = [
+  '__WIDGET__' => json_encode(['id'=> 12, 'name' => '23123']),
+];
+
+$transpiledCode = App\Transpiler::transform(
+    $script,
+    $params,
+    [
+      'minified' => false,
+    ]
+);
+
+file_put_contents('./compiled.js', $transpiledCode);
+
+echo PHP_EOL;
+echo 'elapsed: ' . round(microtime(true) - $start, 2) . 's.';
+echo PHP_EOL;

@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  run:
+    image: stesie/v8js
+    volumes:
+      - ./:/app:delegated
+    working_dir: /app
+    entrypoint: /app/run
+
+
+  composer-install:
+    image: stesie/v8js
+    volumes:
+      - ./:/app:delegated
+    working_dir: /app
+    entrypoint: /app/composer.phar install
+
+
