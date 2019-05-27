@@ -14,7 +14,7 @@ $transpiledCode = App\Transpiler::transform(
     $script,
     $params,
     [
-      'minified' => false,
+      'minified' => true,
     ]
 );
 

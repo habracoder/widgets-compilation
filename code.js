@@ -1,7 +1,7 @@
 
 var widget = JSON.parse(__WIDGET__);
 
-MarketGidBaseBlockC = function(root_id, context, fallback, containerId, uniqId, versionWidget) {
+MarketGidBaseBlockC605 = function(root_id, context, fallback, containerId, uniqId, versionWidget) {
   var self = this;
 
   this.context = context;
